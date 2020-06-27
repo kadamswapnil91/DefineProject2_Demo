@@ -1,0 +1,6 @@
+framework module Pods_Assigment_2_Alamofire_Assigment_2_AlamofireUITests {
+  umbrella header "Pods-Assigment 2 Alamofire-Assigment 2 AlamofireUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
