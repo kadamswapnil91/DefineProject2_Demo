@@ -25,8 +25,16 @@ struct Venue: Decodable {
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var txt_id: UITextField!
     
-  
+    @IBOutlet weak var txt__name: UITextField!
+    
+    @IBAction func btn_save(_ sender: UIButton) {
+        
+        let dict = ["id":txt_id.text,"name":txt__name.text]
+        DatabaseHelper.ShareInstance.save(object: dict as! [String:String])
+        
+    }
     
     @IBOutlet weak var btn_menu: UIBarButtonItem!
     
@@ -49,7 +57,7 @@ class HomeViewController: UIViewController {
 
     
     
-
+////api parsing
     func getdata()
     {
 
@@ -68,7 +76,5 @@ class HomeViewController: UIViewController {
             }
         }
         task.resume()
-        
-
-}
+    }
 }

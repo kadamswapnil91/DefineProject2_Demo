@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		637586C224A737E400E44AFC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637586C124A737E400E44AFC /* CoreData.framework */; };
+		637586ED24A7602B00E44AFC /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637586EC24A7602B00E44AFC /* DatabaseHelper.swift */; };
 		63BB4FBB24A5E07B00A8F59B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BB4FBA24A5E07B00A8F59B /* AppDelegate.swift */; };
 		63BB4FBD24A5E07B00A8F59B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BB4FBC24A5E07B00A8F59B /* ViewController.swift */; };
 		63BB4FC024A5E07B00A8F59B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BB4FBE24A5E07B00A8F59B /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		1CA57D5B38E021FF16808FFE /* Pods_Assigment_2_AlamofireTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assigment_2_AlamofireTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51917F6C730D83C7E2F09C64 /* Pods-Assigment 2 AlamofireTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assigment 2 AlamofireTests.release.xcconfig"; path = "Target Support Files/Pods-Assigment 2 AlamofireTests/Pods-Assigment 2 AlamofireTests.release.xcconfig"; sourceTree = "<group>"; };
+		637586C124A737E400E44AFC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		637586EC24A7602B00E44AFC /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		63BB4FB724A5E07B00A8F59B /* Assigment 2 Alamofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assigment 2 Alamofire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BB4FBA24A5E07B00A8F59B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63BB4FBC24A5E07B00A8F59B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637586C224A737E400E44AFC /* CoreData.framework in Frameworks */,
 				D86E2BD86E603D4C92FA9BC6 /* Pods_Assigment_2_Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,8 +108,8 @@
 		63BB4FAE24A5E07B00A8F59B = {
 			isa = PBXGroup;
 			children = (
+				637586EC24A7602B00E44AFC /* DatabaseHelper.swift */,
 				63BB4FF224A5E3A600A8F59B /* MenuViewController.swift */,
-				63BB4FEF24A5E34800A8F59B /* New Group */,
 				63BB4FB924A5E07B00A8F59B /* Assigment 2 Alamofire */,
 				63BB4FD124A5E08900A8F59B /* Assigment 2 AlamofireTests */,
 				63BB4FDC24A5E08900A8F59B /* Assigment 2 AlamofireUITests */,
@@ -160,16 +165,10 @@
 			path = "Assigment 2 AlamofireUITests";
 			sourceTree = "<group>";
 		};
-		63BB4FEF24A5E34800A8F59B /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		95630C286DDE6822F3496286 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				637586C124A737E400E44AFC /* CoreData.framework */,
 				63BB508E24A6013200A8F59B /* Alamofire.framework */,
 				D02155AF2633D4F19AAFC368 /* Pods_Assigment_2_Alamofire.framework */,
 				E9AFF2CCCD9C6232E5F78449 /* Pods_Assigment_2_Alamofire_Assigment_2_AlamofireUITests.framework */,
@@ -398,6 +397,7 @@
 				63BB4FF124A5E35D00A8F59B /* HomeViewController.swift in Sources */,
 				63BB4FF324A5E3A600A8F59B /* MenuViewController.swift in Sources */,
 				63BB4FBD24A5E07B00A8F59B /* ViewController.swift in Sources */,
+				637586ED24A7602B00E44AFC /* DatabaseHelper.swift in Sources */,
 				63BB4FC324A5E07B00A8F59B /* Assigment_2_Alamofire.xcdatamodeld in Sources */,
 				63BB4FBB24A5E07B00A8F59B /* AppDelegate.swift in Sources */,
 				63BB4FEE24A5E10E00A8F59B /* SWRevealViewController.m in Sources */,
