@@ -8,8 +8,14 @@
 
 import UIKit
 
-class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+protocol Datapass{
+    
+    func data(object:[String:String] , index:Int , isEdit:Bool)
+}
 
+class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    var delegate: Datapass!
     var user = [User]()
     
     @IBOutlet weak var tableview: UITableView!
@@ -67,7 +73,14 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         
     }
-    
+   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let dict = ["id":user[indexPath.row].id,"name":user[indexPath.row].name]
+        delegate.data(object: dict as! [String:String], index: indexPath.row, isEdit: true)
+        
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
     

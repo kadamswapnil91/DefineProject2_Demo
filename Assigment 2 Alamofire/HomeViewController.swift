@@ -23,21 +23,52 @@ struct Venue: Decodable {
 }
 
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController, Datapass {
+   
+    
+   
+    
+    var i = Int()
+    var isUpdate = Bool()
     @IBOutlet weak var txt_id: UITextField!
     
     @IBOutlet weak var txt__name: UITextField!
     
-
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        ///// menu button pops
+        btn_menu.target = self.revealViewController()
+        btn_menu.action = #selector(SWRevealViewController.revealToggle(_:))
+        self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        getdata()
+        
+    }
     
-    
+    func data(object: [String : String], index:Int, isEdit:Bool) {
+        
+        txt_id.text = object["id"]
+        txt__name.text = object["name"]
+        i = index
+        print("Selected index is :",i)
+        
+        isUpdate = isEdit
+    }
     
     
     @IBAction func btn_save(_ sender: UIButton) {
         
         let dict = ["id":txt_id.text,"name":txt__name.text]
-        DatabaseHelper.ShareInstance.save(object: dict as! [String:String])
+        
+        if isUpdate{
+            DatabaseHelper.ShareInstance.editData(object: dict as! [String:String], i: i)
+            
+        }
+        else{
+            
+            DatabaseHelper.ShareInstance.save(object: dict as! [String:String])
+        }
+        
         
     }
     
@@ -46,6 +77,7 @@ class HomeViewController: UIViewController {
         
         let listview = self.storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
         
+        listview.delegate = self ////if we doesnt write this then we cant move from second controller to first
         self.navigationController?.pushViewController(listview, animated: true)
         
     }
@@ -60,19 +92,7 @@ class HomeViewController: UIViewController {
     
     
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        ///// menu button pops 
-        btn_menu.target = self.revealViewController()
-        btn_menu.action = #selector(SWRevealViewController.revealToggle(_:))
-        self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-        
-        
-         getdata()
 
-        
-    }
 
     
     

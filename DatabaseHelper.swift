@@ -25,6 +25,7 @@ class DatabaseHelper{
         
         do{
             try context?.save()
+            print("Data saved Sucessfully!!")
         }catch{
             print("Data is not saved")
         }
@@ -41,6 +42,7 @@ class DatabaseHelper{
             do
             {
                 user = try context?.fetch(fetchRequest) as! [User]
+                print("Data Fetched Sucessfully!!")
             }
             catch{
                 print("can not get data")
@@ -56,6 +58,7 @@ class DatabaseHelper{
         
         do{
             try context?.save()
+            print("Data Deleted Sucessfully!!")
         }
         catch{
             print("Can not delete data")
@@ -63,7 +66,22 @@ class DatabaseHelper{
         return user
     }
     
-    
+    func editData(object:[String:String], i :Int)
+        {
+            var user = getUserData()
+            user[i].id = object["id"]
+            user[i].name = object["name"]
+            do{
+                try context?.save()
+                print("Data Updated Sucessfully!!")
+            }
+            catch
+            {
+                print("Data is naot edit")
+            }
+        
+        
+    }
     
     
     
