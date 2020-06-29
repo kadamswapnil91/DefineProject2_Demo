@@ -29,12 +29,31 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var txt__name: UITextField!
     
+
+    
+    
+    
+    
     @IBAction func btn_save(_ sender: UIButton) {
         
         let dict = ["id":txt_id.text,"name":txt__name.text]
         DatabaseHelper.ShareInstance.save(object: dict as! [String:String])
         
     }
+    
+    
+    @IBAction func btn_Show(_ sender: UIButton) {
+        
+        let listview = self.storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
+        
+        self.navigationController?.pushViewController(listview, animated: true)
+        
+    }
+    
+    
+    
+    
+    
     
     @IBOutlet weak var btn_menu: UIBarButtonItem!
     

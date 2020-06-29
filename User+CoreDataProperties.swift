@@ -19,4 +19,5 @@ extension User {
     @NSManaged public var id: String?
     @NSManaged public var name: String?
 
+
 }

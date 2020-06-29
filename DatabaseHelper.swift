@@ -20,6 +20,8 @@ class DatabaseHelper{
         
         user.id = object["id"]
         user.name = object["name"]
+      
+        
         
         do{
             try context?.save()
@@ -27,8 +29,27 @@ class DatabaseHelper{
             print("Data is not saved")
         }
         
-        
     }
+    
+    
+    func getUserData() -> [User]
+        {
+            var user = [User]()
+            
+            let fetchRequest = NSFetchRequest <NSManagedObject>(entityName: "User")
+            
+            do
+            {
+                user = try context?.fetch(fetchRequest) as! [User]
+            }
+            catch{
+                print("can not get data")
+            }
+            
+            return user
+        
+        
+        }
     
     
 }
