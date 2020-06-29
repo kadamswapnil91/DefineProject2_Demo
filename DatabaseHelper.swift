@@ -47,9 +47,24 @@ class DatabaseHelper{
             }
             
             return user
+    }
+    
+    func deleteData(index:Int) -> [User] {
+        var user = getUserData()
+        context?.delete(user[index])
+        user.remove(at: index)
         
-        
+        do{
+            try context?.save()
         }
+        catch{
+            print("Can not delete data")
+        }
+        return user
+    }
+    
+    
+    
     
     
 }

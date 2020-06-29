@@ -47,5 +47,29 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         return user.count
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete{
+            
+            user = DatabaseHelper.ShareInstance.deleteData(index: indexPath.row)
+            self.tableview.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
+        
+        
+    }
+    
+    
+    
+    
 
 }
