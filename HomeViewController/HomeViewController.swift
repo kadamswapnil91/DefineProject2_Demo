@@ -1,3 +1,5 @@
+
+
 //
 //  HomeViewController.swift
 //  Assigment 2 Alamofire
@@ -7,6 +9,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct Root : Decodable {
     let response : Response
@@ -24,13 +27,19 @@ struct Venue: Decodable {
 
 
 class HomeViewController: UIViewController, Datapass {
-   
     
-   
-    
+    @IBAction func act_nexttotableview(_ sender: UIButton) {
+        
+        let nexttotableview : ListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
+        self.navigationController?.pushViewController(nexttotableview, animated: true)
+        
+        
+    }
+      let array = NSMutableArray()
     var i = Int()
     var isUpdate = Bool()
     @IBOutlet weak var txt_id: UITextField!
+    let dict = NSMutableDictionary()
     
     @IBOutlet weak var txt__name: UITextField!
     
@@ -41,8 +50,13 @@ class HomeViewController: UIViewController, Datapass {
         btn_menu.target = self.revealViewController()
         btn_menu.action = #selector(SWRevealViewController.revealToggle(_:))
         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-        getdata()
-        
+        var firsttime = Bool()
+        firsttime = UserDefaults.standard.bool(forKey: "firsttime")
+        if (!firsttime )
+        {
+          getdata()
+        }
+        print(">>>>>>>>>>",firsttime)
     }
     
     func data(object: [String : String], index:Int, isEdit:Bool) {
@@ -82,24 +96,15 @@ class HomeViewController: UIViewController, Datapass {
         
     }
     
-    
-    
-    
-    
-    
     @IBOutlet weak var btn_menu: UIBarButtonItem!
     
-    
-    
-    
-
-
-    
-    
-////api parsing
+    ////api parsing
     func getdata()
     {
-
+      
+        
+        
+        
         let url = URL(string: "https://api.foursquare.com/v2/venues/search?ll=40.7484,-73.9857&oauth_token=NPKYZ3WZ1VYMNAZ2FLX1WLECAWSMUVOQZOIDBN53F3LVZBPQ&v=20180616")
         
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -107,13 +112,53 @@ class HomeViewController: UIViewController, Datapass {
                 do {
                     let result = try JSONDecoder().decode(Root.self, from: data)
                     result.response.venues.forEach{ print($0.id,":",$0.name)
-                    
+                        
+                        self.dict.setValue($0.id, forKeyPath: "id")
+                        self.dict.setValue($0.name, forKeyPath: "name")
+                        
+                        let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+                        
+                        
+                        
+                        
+                        let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context!) as! User
+                        
+                        user.id = $0.id as? String
+                        user.name = $0.name as! String
+                        
+                        do{
+                            try context?.save()
+                            print("Data saved Sucessfully!!")
+                        }catch{
+                            print("Data is not saved")
+                        }
+                        UserDefaults.standard.set(true, forKey: "firsttime")
+                       // self.array.add(self.dict)
+                        
                     }
                 } catch {
                     print(error)
                 }
+                
+//                if(self.array.count != 0)
+//                {
+//                    
+//                    for index in 0...self.array.count-1
+//                    {
+//                        var dict1 = NSDictionary()
+//                        dict1 = self.array[index] as! NSDictionary
+//                        
+//                     
+//                        
+//                    }
+//                    
+//                }
+//                
+//                print("Dict = ",self.array)
             }
         }
         task.resume()
+        
+        
     }
 }

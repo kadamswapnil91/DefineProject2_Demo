@@ -1,22 +1,15 @@
 //
-//  listTableViewCell.swift
+//  SavedTableViewCell.swift
 //  Assigment 2 Alamofire
 //
-//  Created by Swapnil Kadam on 29/06/20.
+//  Created by Swapnil Kadam on 01/07/20.
 //  Copyright © 2020 Swapnil Kadam. All rights reserved.
 //
 
 import UIKit
 
-class listTableViewCell: UITableViewCell {
+class SavedTableViewCell: UITableViewCell {
 
-    
-    @IBOutlet weak var lbl_Id: UILabel!
-    
-    
-    @IBOutlet weak var lbl_Name: UILabel!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

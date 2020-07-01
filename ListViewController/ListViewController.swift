@@ -18,6 +18,8 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var delegate: Datapass!
     var user = [User]()
     
+    //var dict = dict1()
+    
     @IBOutlet weak var tableview: UITableView!
     
     @IBOutlet weak var lbl_Id: UILabel!
@@ -27,6 +29,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         user = DatabaseHelper.ShareInstance.getUserData()
+         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         
     }
 
@@ -45,6 +48,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.lbl_Id.text = user[indexPath.row].id
         cell.lbl_Name.text = user[indexPath.row].name
         
+        cell.contentview.layer.cornerRadius = 15
         return cell
         
     }
@@ -54,9 +58,9 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return user.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 50
+//    }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

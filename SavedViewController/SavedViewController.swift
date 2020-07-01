@@ -1,14 +1,14 @@
 //
-//  LoginViewController.swift
+//  SavedViewController.swift
 //  Assigment 2 Alamofire
 //
-//  Created by Swapnil Kadam on 29/06/20.
+//  Created by Swapnil Kadam on 01/07/20.
 //  Copyright © 2020 Swapnil Kadam. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class SavedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
