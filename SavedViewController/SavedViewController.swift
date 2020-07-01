@@ -8,10 +8,14 @@
 
 import UIKit
 
-class SavedViewController: UIViewController {
+class SavedViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    
+    @IBOutlet weak var savedtableview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
 
         // Do any additional setup after loading the view.
     }

@@ -27,10 +27,21 @@ class MenuViewController: UIViewController {
             self.revealViewController().setFront(navController, animated: true)
         }
         
+    }
+    
+    
+    @IBAction func btn_SavedMatches(_ sender: UIButton) {
+        
+        if let savedView = self.storyboard?.instantiateViewController(withIdentifier: "SavedViewController") as? SavedViewController {
+            let navController = UINavigationController(rootViewController: savedView)
+            navController.setViewControllers([savedView], animated:true)
+            self.revealViewController().setFront(navController, animated: true)
+        }
         
         
         
     }
+    
     
     
     

@@ -10,6 +10,10 @@ import UIKit
 
 class SavedTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lbl_savedid: UILabel!
+    
+    @IBOutlet weak var lbl_savedName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

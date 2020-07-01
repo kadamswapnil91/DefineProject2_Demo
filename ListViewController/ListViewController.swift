@@ -13,6 +13,13 @@ protocol Datapass{
     func data(object:[String:String] , index:Int , isEdit:Bool)
 }
 
+
+
+
+
+
+
+
 class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var delegate: Datapass!
@@ -26,17 +33,34 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @IBOutlet weak var lbl_Name: UILabel!
     
+    
+    
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         user = DatabaseHelper.ShareInstance.getUserData()
          self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
         
     }
+    
+    
+ 
+    
+
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+    
+    
+ 
+    
     
 
     
@@ -49,9 +73,20 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.lbl_Name.text = user[indexPath.row].name
         
         cell.contentview.layer.cornerRadius = 15
+        
+        cell.tapblock = {
+            
+            print(indexPath.row)
+        }
+        
+        
+        
         return cell
         
     }
+    
+
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -80,13 +115,16 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let dict = ["id":user[indexPath.row].id,"name":user[indexPath.row].name]
-        delegate.data(object: dict as! [String:String], index: indexPath.row, isEdit: true)
+//        let dict = ["id":user[indexPath.row].id,"name":user[indexPath.row].name]
+//        delegate.data(object: dict as! [String:String], index: indexPath.row, isEdit: true)
+//        self.navigationController?.popViewController(animated: true)
         
-        self.navigationController?.popViewController(animated: true)
+        print("Row \(indexPath.row)selected")
+        
     }
-    
-    
+   
+
+
     
 
 }

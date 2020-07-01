@@ -8,14 +8,35 @@
 
 import UIKit
 
+
+
+
+
 class listTableViewCell: UITableViewCell {
 
     @IBOutlet weak var contentview: UIView!
     
     @IBOutlet weak var lbl_Id: UILabel!
     
+    @IBOutlet weak var btn_starOutlet: UIButton!
     
     @IBOutlet weak var lbl_Name: UILabel!
+    
+    var tapblock:(() -> Void)?  = nil
+   
+    
+    @IBAction func btn_StarButton(_ sender: UIButton) {
+        tapblock!()
+      
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     override func awakeFromNib() {

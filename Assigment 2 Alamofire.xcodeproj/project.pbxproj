@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6365DC0324A9FBA5002AB095 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365DC0224A9FBA5002AB095 /* LoginViewController.swift */; };
 		637586C224A737E400E44AFC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637586C124A737E400E44AFC /* CoreData.framework */; };
 		637586ED24A7602B00E44AFC /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637586EC24A7602B00E44AFC /* DatabaseHelper.swift */; };
 		638FB7B824A9B7CE003DBFCC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FB7B724A9B7CE003DBFCC /* ListViewController.swift */; };
 		638FB7BA24A9B7F1003DBFCC /* listTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FB7B924A9B7F1003DBFCC /* listTableViewCell.swift */; };
+		63991A3624AC4FF10096839A /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63991A3524AC4FF10096839A /* SavedViewController.swift */; };
+		63991A3C24AC51500096839A /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63991A3B24AC51500096839A /* SavedTableViewCell.swift */; };
 		63BB4FBB24A5E07B00A8F59B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BB4FBA24A5E07B00A8F59B /* AppDelegate.swift */; };
 		63BB4FBD24A5E07B00A8F59B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BB4FBC24A5E07B00A8F59B /* ViewController.swift */; };
 		63BB4FC024A5E07B00A8F59B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BB4FBE24A5E07B00A8F59B /* Main.storyboard */; };
@@ -47,10 +50,13 @@
 /* Begin PBXFileReference section */
 		1CA57D5B38E021FF16808FFE /* Pods_Assigment_2_AlamofireTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assigment_2_AlamofireTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51917F6C730D83C7E2F09C64 /* Pods-Assigment 2 AlamofireTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assigment 2 AlamofireTests.release.xcconfig"; path = "Target Support Files/Pods-Assigment 2 AlamofireTests/Pods-Assigment 2 AlamofireTests.release.xcconfig"; sourceTree = "<group>"; };
+		6365DC0224A9FBA5002AB095 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		637586C124A737E400E44AFC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		637586EC24A7602B00E44AFC /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		638FB7B724A9B7CE003DBFCC /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		638FB7B924A9B7F1003DBFCC /* listTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listTableViewCell.swift; sourceTree = "<group>"; };
+		63991A3524AC4FF10096839A /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		63991A3B24AC51500096839A /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		63BB4FB724A5E07B00A8F59B /* Assigment 2 Alamofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assigment 2 Alamofire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BB4FBA24A5E07B00A8F59B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63BB4FBC24A5E07B00A8F59B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,13 +115,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63991A3724AC50640096839A /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63BB4FF224A5E3A600A8F59B /* MenuViewController.swift */,
+			);
+			path = MenuViewController;
+			sourceTree = "<group>";
+		};
+		63991A3824AC50700096839A /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6365DC0224A9FBA5002AB095 /* LoginViewController.swift */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		63991A3924AC50740096839A /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				638FB7B724A9B7CE003DBFCC /* ListViewController.swift */,
+				638FB7B924A9B7F1003DBFCC /* listTableViewCell.swift */,
+			);
+			path = ListViewController;
+			sourceTree = "<group>";
+		};
+		63991A3A24AC508E0096839A /* SavedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63991A3524AC4FF10096839A /* SavedViewController.swift */,
+				63991A3B24AC51500096839A /* SavedTableViewCell.swift */,
+			);
+			path = SavedViewController;
+			sourceTree = "<group>";
+		};
+		63991A3D24AC516B0096839A /* SWrevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SWrevealViewController;
+			sourceTree = "<group>";
+		};
+		63991A3E24AC51B40096839A /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63BB4FF024A5E35D00A8F59B /* HomeViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
 		63BB4FAE24A5E07B00A8F59B = {
 			isa = PBXGroup;
 			children = (
-				638FB7B924A9B7F1003DBFCC /* listTableViewCell.swift */,
-				638FB7B724A9B7CE003DBFCC /* ListViewController.swift */,
+				63991A3E24AC51B40096839A /* HomeViewController */,
+				63991A3D24AC516B0096839A /* SWrevealViewController */,
+				63991A3A24AC508E0096839A /* SavedViewController */,
+				63991A3924AC50740096839A /* ListViewController */,
+				63991A3824AC50700096839A /* LoginViewController */,
+				63991A3724AC50640096839A /* MenuViewController */,
 				637586EC24A7602B00E44AFC /* DatabaseHelper.swift */,
-				63BB4FF224A5E3A600A8F59B /* MenuViewController.swift */,
+				63BB4FBE24A5E07B00A8F59B /* Main.storyboard */,
 				63BB4FB924A5E07B00A8F59B /* Assigment 2 Alamofire */,
 				63BB4FD124A5E08900A8F59B /* Assigment 2 AlamofireTests */,
 				63BB4FDC24A5E08900A8F59B /* Assigment 2 AlamofireUITests */,
@@ -139,15 +198,13 @@
 			isa = PBXGroup;
 			children = (
 				63BB4FBA24A5E07B00A8F59B /* AppDelegate.swift */,
-				63BB4FF024A5E35D00A8F59B /* HomeViewController.swift */,
-				63BB4FBE24A5E07B00A8F59B /* Main.storyboard */,
-				63BB4FED24A5E10E00A8F59B /* SWRevealViewController.h */,
+				63BB4FEB24A5E10C00A8F59B /* Assigment 2 Alamofire-Bridging-Header.h */,
 				63BB4FEC24A5E10E00A8F59B /* SWRevealViewController.m */,
+				63BB4FED24A5E10E00A8F59B /* SWRevealViewController.h */,
 				63BB4FC424A5E08800A8F59B /* Assets.xcassets */,
 				63BB4FC624A5E08800A8F59B /* LaunchScreen.storyboard */,
 				63BB4FC924A5E08800A8F59B /* Info.plist */,
 				63BB4FC124A5E07B00A8F59B /* Assigment_2_Alamofire.xcdatamodeld */,
-				63BB4FEB24A5E10C00A8F59B /* Assigment 2 Alamofire-Bridging-Header.h */,
 				63BB4FBC24A5E07B00A8F59B /* ViewController.swift */,
 			);
 			path = "Assigment 2 Alamofire";
@@ -405,9 +462,12 @@
 				63BB4FF324A5E3A600A8F59B /* MenuViewController.swift in Sources */,
 				63BB4FBD24A5E07B00A8F59B /* ViewController.swift in Sources */,
 				637586ED24A7602B00E44AFC /* DatabaseHelper.swift in Sources */,
+				63991A3C24AC51500096839A /* SavedTableViewCell.swift in Sources */,
 				63BB4FC324A5E07B00A8F59B /* Assigment_2_Alamofire.xcdatamodeld in Sources */,
 				63BB4FBB24A5E07B00A8F59B /* AppDelegate.swift in Sources */,
 				638FB7B824A9B7CE003DBFCC /* ListViewController.swift in Sources */,
+				63991A3624AC4FF10096839A /* SavedViewController.swift in Sources */,
+				6365DC0324A9FBA5002AB095 /* LoginViewController.swift in Sources */,
 				63BB4FEE24A5E10E00A8F59B /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +580,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -573,6 +634,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
