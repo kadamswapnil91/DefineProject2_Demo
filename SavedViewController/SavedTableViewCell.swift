@@ -14,6 +14,10 @@ class SavedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lbl_savedName: UILabel!
     
+  
+    
+    @IBOutlet weak var SavedContent: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		638FB7BA24A9B7F1003DBFCC /* listTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FB7B924A9B7F1003DBFCC /* listTableViewCell.swift */; };
 		63991A3624AC4FF10096839A /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63991A3524AC4FF10096839A /* SavedViewController.swift */; };
 		63991A3C24AC51500096839A /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63991A3B24AC51500096839A /* SavedTableViewCell.swift */; };
+		63991A4024AC8DAE0096839A /* Database2Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63991A3F24AC8DAE0096839A /* Database2Helper.swift */; };
 		63BB4FBB24A5E07B00A8F59B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BB4FBA24A5E07B00A8F59B /* AppDelegate.swift */; };
 		63BB4FBD24A5E07B00A8F59B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BB4FBC24A5E07B00A8F59B /* ViewController.swift */; };
 		63BB4FC024A5E07B00A8F59B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BB4FBE24A5E07B00A8F59B /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		638FB7B924A9B7F1003DBFCC /* listTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listTableViewCell.swift; sourceTree = "<group>"; };
 		63991A3524AC4FF10096839A /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		63991A3B24AC51500096839A /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
+		63991A3F24AC8DAE0096839A /* Database2Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database2Helper.swift; sourceTree = "<group>"; };
 		63BB4FB724A5E07B00A8F59B /* Assigment 2 Alamofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assigment 2 Alamofire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BB4FBA24A5E07B00A8F59B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63BB4FBC24A5E07B00A8F59B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -167,13 +169,14 @@
 		63BB4FAE24A5E07B00A8F59B = {
 			isa = PBXGroup;
 			children = (
+				63991A3F24AC8DAE0096839A /* Database2Helper.swift */,
+				637586EC24A7602B00E44AFC /* DatabaseHelper.swift */,
 				63991A3E24AC51B40096839A /* HomeViewController */,
 				63991A3D24AC516B0096839A /* SWrevealViewController */,
 				63991A3A24AC508E0096839A /* SavedViewController */,
 				63991A3924AC50740096839A /* ListViewController */,
 				63991A3824AC50700096839A /* LoginViewController */,
 				63991A3724AC50640096839A /* MenuViewController */,
-				637586EC24A7602B00E44AFC /* DatabaseHelper.swift */,
 				63BB4FBE24A5E07B00A8F59B /* Main.storyboard */,
 				63BB4FB924A5E07B00A8F59B /* Assigment 2 Alamofire */,
 				63BB4FD124A5E08900A8F59B /* Assigment 2 AlamofireTests */,
@@ -338,7 +341,7 @@
 				};
 			};
 			buildConfigurationList = 63BB4FB224A5E07B00A8F59B /* Build configuration list for PBXProject "Assigment 2 Alamofire" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -464,6 +467,7 @@
 				637586ED24A7602B00E44AFC /* DatabaseHelper.swift in Sources */,
 				63991A3C24AC51500096839A /* SavedTableViewCell.swift in Sources */,
 				63BB4FC324A5E07B00A8F59B /* Assigment_2_Alamofire.xcdatamodeld in Sources */,
+				63991A4024AC8DAE0096839A /* Database2Helper.swift in Sources */,
 				63BB4FBB24A5E07B00A8F59B /* AppDelegate.swift in Sources */,
 				638FB7B824A9B7CE003DBFCC /* ListViewController.swift in Sources */,
 				63991A3624AC4FF10096839A /* SavedViewController.swift in Sources */,
@@ -574,9 +578,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -629,8 +634,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -646,6 +652,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5C78XHM8JG;
 				INFOPLIST_FILE = "Assigment 2 Alamofire/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -667,6 +674,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5C78XHM8JG;
 				INFOPLIST_FILE = "Assigment 2 Alamofire/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
